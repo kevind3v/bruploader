@@ -1,0 +1,26 @@
+{
+  "name": "brbunny/bruploader",
+  "description": "It is a base64 upload manager for PHP with ease and security",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Kevin Santos",
+      "email": "kevinsiqueira.dev@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "BrBunny\\BrUploader\\": "src"
+    }
+  },
+  "require": {
+    "php": "^7.2",
+    "ext-pdo": "*",
+    "coffeecode/uploader": "1.0.*"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "3.*"
+  }
+}
