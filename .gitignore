@@ -1,5 +1,6 @@
 # Created by https://www.toptal.com/developers/gitignore/api/linux,windows,macos,vscode,composer,netbeans,phpstorm
 # Edit at https://www.toptal.com/developers/gitignore?templates=linux,windows,macos,vscode,composer,netbeans,phpstorm
+example/uploads/
 
 ### Composer ###
 composer.phar

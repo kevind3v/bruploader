@@ -4,7 +4,7 @@ namespace BrBunny\BrUploader;
 
 use CoffeeCode\Uploader\Uploader;
 
-class BrBase64 extends Uploader
+class Base64 extends Uploader
 {
     protected static $allowTypes = [
         'jpg',

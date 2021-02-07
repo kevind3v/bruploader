@@ -38,14 +38,14 @@ _For details on how to use the upload, see a sample folder in the component dire
 
 Para mais detalhes sobre como usar o upload, veja uma pasta de exemplo no diretório do componente. Nela terá um exemplo de uso para cada classe. BrUploader funciona assim:
 
-##### Upload and Image
+##### Upload Image
 
 ```php
 <?php
 
 require __DIR__ . "/../vendor/autoload.php";
 
-$image = new \BrBunny\BrUploader\BrBase64("uploads", "images");
+$image = new \BrBunny\BrUploader\Base64("uploads", "images");
 
 // $_POST['image'] => Base64 string of the image
 
@@ -57,6 +57,23 @@ if ($_POST && $_POST['image']) {
         echo "<p>(!) {$e->getMessage()}</p>";
     }
 }
+```
+
+##### Remove Image
+
+```php
+<?php
+
+require __DIR__ . "/../vendor/autoload.php";
+
+use BrBunny\BrUploader\Base64;
+
+// $_GET['path'] => Image path
+
+if ($_GET && $_GET['path']) {
+   Base64::remove($_GET['path']);
+}
+
 ```
 
 ### Credits

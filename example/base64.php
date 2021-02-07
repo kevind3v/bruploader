@@ -5,12 +5,13 @@
         <?php
         require __DIR__ . "/../vendor/autoload.php";
 
-        //$image = new \BrBunny\BrUploader\BrBase64("uploads", "images", false); //SEM PASTAS DE ANO E MÊS
-        $image = new \BrBunny\BrUploader\BrBase64("uploads", "images");
+        //$image = new \BrBunny\BrUploader\Base64("uploads", "images", false); //SEM PASTAS DE ANO E MÊS
+        $image = new \BrBunny\BrUploader\Base64("uploads", "images");
         if ($_POST && $_POST['image']) {
             try {
                 $upload = $image->upload($_POST['image'], $_POST['name']);
                 echo "<img src='{$upload}' width='100%'>";
+                echo "<a href='remove.php?path={$upload}'>Remover Imagem</a>";
             } catch (Exception $e) {
                 echo "<p>(!) {$e->getMessage()}</p>";
             }
