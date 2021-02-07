@@ -5,7 +5,7 @@
         <?php
         require __DIR__ . "/../vendor/autoload.php";
 
-        //$image = new CoffeeCode\Uploader\Image("uploads", "images", false); //SEM PASTAS DE ANO E MÊS
+        //$image = new \BrBunny\BrUploader\BrBase64("uploads", "images", false); //SEM PASTAS DE ANO E MÊS
         $image = new \BrBunny\BrUploader\BrBase64("uploads", "images");
         if ($_POST && $_POST['image']) {
             try {
@@ -20,6 +20,9 @@
         <input type="file" onchange="base64(this)" required />
         <input type="hidden" name="image" id="image">
         <button>Send Image</button>
+        <br>
+        <span>Image in base64:</span>
+        <div id="result"></div>
     </form>
 </div>
 
@@ -31,6 +34,8 @@
         var reader = new FileReader();
         reader.onloadend = function() {
             document.getElementById('image').value = reader.result;
+            document.getElementById('result').innerHTML = reader.result;
+            console.log(reader.result);
         }
         reader.readAsDataURL(file);
     }
