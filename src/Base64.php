@@ -53,9 +53,9 @@ class Base64 extends Uploader
      * @param string $path
      * @return boolean
      */
-    public static function remove(string $path): bool
+    public static function remove(string $path = "/"): bool
     {
-        if (file_exists($path)) {
+        if (file_exists($path) && is_file($path)) {
             unlink($path);
             return true;
         }
